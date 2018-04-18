@@ -50,5 +50,166 @@
       
     </item>
     
+    <item>
+      <title>Linux学习从入门到精通推荐书籍</title>
+      <link>http://chanrom.github.io/post/test2/</link>
+      <pubDate>Fri, 18 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://chanrom.github.io/post/test2/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;如何学习linux&#34;&gt;如何学习Linux&lt;/h1&gt;
+
+&lt;p&gt;在现在的生活，生产，研究等领域，Linux已经无所不在，从我们使用的手机，车载设备，到服务器，桌面电脑等，Linux已经成为这个世界方方面面的基石。尤其对于参与技术有关工作的你学习Linux是必须的，那么，该如何有效的学习呢？Linux从诞生至今，已经是一个非常庞大且复杂的系统，下图是Linux系统代码行数的统计（参考&lt;a href=&#34;https://www.linuxcounter.net/statistics/kernel&#34;&gt;linuxcounter&lt;/a&gt;）：
+&lt;img src=&#34;http://chanrom.github.io/img/blog-linux-code-lines.png&#34; alt=&#34;Linux代码行数变化&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;可见截止本文为止，Linux的代码行数逼近2千万行，你就每天看1万行也得要6，7年，况且这还只是Linux内核的代码量，再加上每个Linux发行版本有关的代码，估计得突破天际了。因此，要在短期内全面的学习Linux的方方面面对于一个正常的人来说几乎不太可能。所以，学习Linux的关键便在于对于学习Linux的目的一定要明确，通常来讲可能会涉及到一下方面：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;了解及入门&lt;/li&gt;
+&lt;li&gt;成为Linux的系统管理员&lt;/li&gt;
+&lt;li&gt;学习Linux应用编程&lt;/li&gt;
+&lt;li&gt;学习Linux内核开发&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;当然，这只是其中几个大的方面，即便如此，其中每个方面都是一个非常大的议题。比如说&lt;code&gt;学习Linux内核开发&lt;/code&gt;，这个就包括了无数小的方面，内核本身就包括了非常多的细分方向，比如有的搞网络，有的搞文件系统，有的搞驱动开发等等。所以，对于Linux，还请千万慎重的评价自己是否真的&lt;code&gt;精通&lt;/code&gt;，学无止境，真要&lt;code&gt;精通&lt;/code&gt;Linux的主要方面，有可能需要穷尽你的个人生涯。&lt;/p&gt;
+
+&lt;p&gt;当然，对于学习Linux，前人已经铺好了无数的基石，有无数可以参考学习的资料，而且内核也是开源的，必要的时候可以查看&lt;a href=&#34;https://github.com/torvalds/linux&#34;&gt;其代码&lt;/a&gt;，甚至已经有非常多帮你分析内核代码的&lt;a href=&#34;https://www.quora.com/What-are-the-best-resources-to-learn-about-Linux-kernel-internals&#34;&gt;书籍资料&lt;/a&gt;，甚至还有很多&lt;a href=&#34;https://www.zhihu.com/question/19606660&#34;&gt;中文资料&lt;/a&gt;。所以，不论你打算要学习到如何的程度，已经有无数的资料可以参考，也有极为庞大的&lt;a href=&#34;http://www.linuxandubuntu.com/home/top-10-communities-to-help-you-learn-linux&#34;&gt;社区&lt;/a&gt;可以依靠。本文将就Linux学习推荐一些经典免费的书籍，主要侧重覆盖从入门到成为系统管理员的有关方面，学习对象为初学Linux，以及需要重新系统学习Linux的读者，将涵盖以下方面：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;入门基础&lt;/li&gt;
+&lt;li&gt;Linux命令行及工具&lt;/li&gt;
+&lt;li&gt;Linux Bash脚本&lt;/li&gt;
+&lt;li&gt;Linux发行版本&lt;/li&gt;
+&lt;li&gt;Linux系统管理&lt;/li&gt;
+&lt;li&gt;Linux基本开发&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;为啥需要重点学习系统管理方面呢？有的Linux开发人员可能会说，不是有专门的Linux系统管理员吗，有必要花大力气学习系统管理吗？这个博主表示是非常有必要，开发可能侧重于功能的实现，而且往往侧重于细节，然而系统管理则直接面向功能本身，更多的是从整个系统的宏观角度来熟悉Linux。咱们有句话说&lt;code&gt;不识庐山真面目，只缘身在此山中&lt;/code&gt;便是这个道理，开发者对于细节或许极为了解，但是未必对整个系统功能有足够的熟悉。而如果对于宏观的系统整体有足够的理解，对于开发本身来说也是有很大的促进作用的。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1 id=&#34;书籍推荐&#34;&gt;书籍推荐&lt;/h1&gt;
+
+&lt;h2 id=&#34;入门基础书籍&#34;&gt;入门基础书籍&lt;/h2&gt;
+
+&lt;h3 id=&#34;introduction-to-linux&#34;&gt;Introduction to Linux&lt;/h3&gt;
+
+&lt;p&gt;这是一本免费的书，来自于&lt;a href=&#34;Linux_Doc_Proj&#34;&gt;Linux文档项目&lt;/a&gt;。虽然免费，但是不影响它的流行程度，该书比较系统的介绍了Linux的一些基本概念，包括文件系统，命令行，网络等。但是鉴于Linux现在也是版本帝，有些内容可能跟不上最新的版本，但是，这完全不影响对于基本概念的理解。&lt;/p&gt;
+
+&lt;h3 id=&#34;linux-fundamentals&#34;&gt;Linux Fundamentals&lt;/h3&gt;
+
+&lt;p&gt;从这本书的书名就可以看出，作者&lt;a href=&#34;http://www.linkedin.com/in/cobbaut&#34;&gt;Paul Cobbaut&lt;/a&gt;就是侧重于介绍Linux最基础的有关知识。涉及到Linux的历史，如何安装以及一些简单但是常用的命令。&lt;/p&gt;
+
+&lt;h2 id=&#34;linux命令行及工具书籍&#34;&gt;Linux命令行及工具书籍&lt;/h2&gt;
+
+&lt;h3 id=&#34;gnu-linux-command-line-tools-summary&#34;&gt;GNU/Linux Command−Line Tools Summary&lt;/h3&gt;
+
+&lt;p&gt;这本书同样来自于&lt;a href=&#34;Linux_Doc_Proj&#34;&gt;Linux文档项目&lt;/a&gt;。适于初学Linux命令行的读者。&lt;/p&gt;
+
+&lt;h3 id=&#34;bash-reference-manual-from-gnu&#34;&gt;Bash Reference Manual from GNU&lt;/h3&gt;
+
+&lt;p&gt;此书来自于&lt;a href=&#34;https://www.gnu.org/home.en.html&#34;&gt;GNU&lt;/a&gt;，着重介绍Linux命令行。&lt;/p&gt;
+
+&lt;h3 id=&#34;the-linux-command-line&#34;&gt;The Linux Command Line&lt;/h3&gt;
+
+&lt;p&gt;如果你把前面的几本基本的命令行的书籍啃完，并迫切希望能够进一步深入了解命令行，那么这本出自&lt;a href=&#34;http://www.oreilly.com/pub/au/4962&#34;&gt;William Shotts&lt;/a&gt;的书是必须一读的，此书500多页的篇幅，极为详尽的介绍了Linux命令行，也许你自诩比较熟悉命令行，相信此书还是能够带个你新的见识。&lt;/p&gt;
+
+&lt;h2 id=&#34;linux-bash脚本书籍&#34;&gt;Linux Bash脚本书籍&lt;/h2&gt;
+
+&lt;h3 id=&#34;bash-beginners-guide&#34;&gt;Bash Beginners Guide&lt;/h3&gt;
+
+&lt;p&gt;顾名思义，此书就是为初学者准备的，同样来自于&lt;a href=&#34;Linux_Doc_Proj&#34;&gt;Linux文档项目&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h3 id=&#34;advanced-bash-scripting-guide&#34;&gt;Advanced Bash-Scripting Guide&lt;/h3&gt;
+
+&lt;p&gt;如果你对Linux Bash脚本有了基本的认识，那么这本书将是你进阶的必备书籍。此书900多页的篇幅涉及Bash脚本的方方面面，不论对于打算进阶或者已经较为熟悉的人来说都是一本重要的参考书籍。&lt;/p&gt;
+
+&lt;h3 id=&#34;the-awk-programming-language&#34;&gt;The AWK Programming Language&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.tutorialspoint.com/unix_commands/awk.htm&#34;&gt;AWK&lt;/a&gt;命令是一个极为强大的Linux命令，同时提供非常强大的脚本支持。也正是因为强大，所以就有专门的书籍来介绍这个命令，如果你要把自己的Linux命令再提升一点的话，建议看下这本书来深入的学习该命令。&lt;/p&gt;
+
+&lt;h3 id=&#34;linux-101-hacks&#34;&gt;Linux 101 Hacks&lt;/h3&gt;
+
+&lt;p&gt;不论从这本书的书名，还是这本书的来源&lt;a href=&#34;http://www.thegeekstuff.com/2009/02/linux-101-hacks-download-free-ebook/&#34;&gt;The Geek Stuff&lt;/a&gt;，此书都暗示着其将以新颖独特的角度为你介绍Linux脚本。&lt;/p&gt;
+
+&lt;h2 id=&#34;linux发行版本书籍&#34;&gt;Linux发行版本书籍&lt;/h2&gt;
+
+&lt;h3 id=&#34;centos-system-administration-essentials&#34;&gt;CentOS System Administration Essentials&lt;/h3&gt;
+
+&lt;p&gt;这本书较为系统的介绍了Centos系统的有关知识，包括了文件系统，包管理系统，用户系统，安全中心以及一些常用应用软件介绍，对于使用Centos系统的人员还是有所帮助的。&lt;/p&gt;
+
+&lt;h3 id=&#34;ubuntu-manual&#34;&gt;Ubuntu Manual&lt;/h3&gt;
+
+&lt;p&gt;这本书来源于&lt;a href=&#34;https://ubuntu-manual.org/&#34;&gt;Ubuntu Manual网站&lt;/a&gt;，以不多的篇幅较为系统的介绍了Ubuntu系统的日常使用。&lt;/p&gt;
+
+&lt;h3 id=&#34;for-linux-mint-just-tell-me-damnit&#34;&gt;For Linux Mint: Just Tell Me Damnit!&lt;/h3&gt;
+
+&lt;p&gt;这本书集中介绍了&lt;a href=&#34;https://www.linuxmint.com/&#34;&gt;Linux Mint&lt;/a&gt;系统，涉及了安装，包管理，定制桌面等方面。&lt;/p&gt;
+
+&lt;h3 id=&#34;solus-linux-manual&#34;&gt;Solus Linux Manual&lt;/h3&gt;
+
+&lt;p&gt;顾名思义，此书介绍&lt;a href=&#34;https://solus-project.com/&#34;&gt;Solus Linux&lt;/a&gt;系统，篇幅较短。&lt;/p&gt;
+
+&lt;h3 id=&#34;the-debian-administration-s-handbook&#34;&gt;The Debian Administration’s Handbook&lt;/h3&gt;
+
+&lt;p&gt;这本书号称&lt;a href=&#34;https://www.debian.org/&#34;&gt;Debian Linux&lt;/a&gt;系统的圣经，涵盖了Debian的历史，安装，包管理，虚拟机，存储等方面，对于使用Debian系统的人员来说，此书必备。&lt;/p&gt;
+
+&lt;h2 id=&#34;linux系统管理书籍&#34;&gt;Linux系统管理书籍&lt;/h2&gt;
+
+&lt;p&gt;虽然此章节被独立命名为&lt;code&gt;Linux系统管理&lt;/code&gt;，但是，前面的章节其实都可以认为在此范畴，只不过更加偏向于基础。所以，在这章节中都是侧重于较为深入的系统管理有关知识，最好是在前面章节的基础之上再学习此章节。&lt;/p&gt;
+
+&lt;h3 id=&#34;linux-system-administration&#34;&gt;Linux System Administration&lt;/h3&gt;
+
+&lt;p&gt;这本书也是出自于&lt;a href=&#34;http://www.linkedin.com/in/cobbaut&#34;&gt;Paul Cobbaut&lt;/a&gt;之手，覆盖了网络，磁盘，用户，内核，库等管理。&lt;/p&gt;
+
+&lt;h3 id=&#34;advanced-linux-system-administration&#34;&gt;Advanced Linux System Administration&lt;/h3&gt;
+
+&lt;p&gt;如果你觉得自己很懂Linux系统管理，也非常希望别人能够知道你很懂，那么你应该去参加&lt;a href=&#34;LPIC&#34;&gt;LPIC&lt;/a&gt;。而要参加该认证，此书是必看的官方指定用书。&lt;/p&gt;
+
+&lt;h3 id=&#34;pro-linux-system-administration-2nd-edition&#34;&gt;Pro Linux System Administration, 2nd Edition&lt;/h3&gt;
+
+&lt;p&gt;这是一本非常详细的Linux系统管理的书籍，全书1000+页的篇幅涵盖了Linux系统管理的很多方面，即适合初学者，也可以作为有一定基础的人系统学习的重要参考。同时，该书的第二部分介绍了很多Linux系统管理的应用，如NTP，DNS，邮件，文件共享，性能监控等等，非常值得一看。&lt;/p&gt;
+
+&lt;h3 id=&#34;linux-bible-9th-edition&#34;&gt;Linux Bible 9th Edition&lt;/h3&gt;
+
+&lt;p&gt;不用讲了，敢取这么牛逼的名字，而且书的&lt;a href=&#34;https://www.amazon.com/Linux-Bible-Christopher-Negus/dp/1118999878&#34;&gt;评价还不错&lt;/a&gt;，必然是好书。此书将近1000页的篇幅，从不同程度介绍了Linux系统，比如如何入门，如何成为Linux的熟练用户，如果成为系统管理员，如何成为Linux安全维护人员等等，还是比较实至名归的。&lt;/p&gt;
+
+&lt;h3 id=&#34;linux-servers&#34;&gt;Linux Servers&lt;/h3&gt;
+
+&lt;p&gt;此书又来自于&lt;a href=&#34;http://www.linkedin.com/in/cobbaut&#34;&gt;Paul Cobbaut&lt;/a&gt;，从书名就能推测其范畴，主要侧重讲述如何打造你的Linux服务器，包括web server，mysql数据库，DHCP等。&lt;/p&gt;
+
+&lt;h3 id=&#34;linux-networking&#34;&gt;Linux Networking&lt;/h3&gt;
+
+&lt;p&gt;Linux网络对于系统管理员来说是最为重要的一块之一，同样ÃÂ助的。&lt;/p&gt;
+
+&lt;h1 id=&#34;书籍下载&#34;&gt;书籍下载&lt;/h1&gt;
+
+&lt;p&gt;本博文中所列书籍都可以在博主的&lt;a href=&#34;http://download.csdn.net/user/walkerhau&#34;&gt;CSDN个人下载空间&lt;/a&gt;找到，资源名为&lt;code&gt;Linux入门及系统管理推荐书籍&lt;/code&gt;，由于大小限制，分为三个压缩包，下载所有压缩包到一台Linux机器，解压运行命令：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;cat linux-basic.tgz.* | tar xz
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其中有一个文件整理的时候出错了，文件名为&lt;code&gt;Ubuntu-Manual.pdf&lt;/code&gt;，其实是&lt;code&gt;Solus&lt;/code&gt;的电子书。你可以从&lt;a href=&#34;https://ubuntu-manual.org/&#34;&gt;Ubuntu Manual官网&lt;/a&gt;直接下载。&lt;/p&gt;
+
+&lt;p&gt;资源需要一定的资源分下载，本来想免费，但是博主个人觉得还是不错的资源，也废了自己不少时间整理，鉴于免费容易轻视，所以面向真要打算认真学习的人，收取一定的资源分。如果没有足够的资源分也没关系，你完全可以根据本文所列书名Google之，都是有免费电子版的。实在不愿自己搜罗的，也可以在评论区留下你的邮箱，博主会不定时发给你邮箱，压缩包总共将近140M，还请确保你的邮箱能够接收如此大的附件。&lt;/p&gt;
+
+&lt;h1 id=&#34;结语&#34;&gt;结语&lt;/h1&gt;
+
+&lt;p&gt;Linux博大精深，很多人即便从事一辈子Linux开发也未必能够熟悉Linux的各个方面。为了能够支撑自己在Linux的路上走的足够远，一个牢固的基础是必须得有的，本文侧重推荐Linux系统管理的有关书籍，希望读者能够对Linux的宏观整体有个非常透彻的理解，为以后选择某个方向深入研究铺好路。同时，也欢迎各位的其它推荐，欢迎在评论区留言，有合适的书籍，博主也会不定时更新在博文之中。&lt;/p&gt;
+
+&lt;h1 id=&#34;参考&#34;&gt;参考&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;Linux_Doc_Proj&#34;&gt;Linux Document Project&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ubuntu-manual.org/&#34;&gt;Ubuntu Manual&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;LPIC&#34;&gt;LPIC wikipedia&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://itsfoss.com/learn-linux-for-free/&#34;&gt;learn linux for free&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+      
+    </item>
+    
   </channel>
 </rss>
