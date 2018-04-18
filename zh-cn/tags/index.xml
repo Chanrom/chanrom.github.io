@@ -6,37 +6,9 @@
     <description>Recent content in Tags on Chanrom - Logging life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 06 Mar 2018 16:01:23 +0800</lastBuildDate>
     
 	<atom:link href="http://chanrom.github.io/zh-cn/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Preview</title>
-      <link>http://chanrom.github.io/zh-cn/tags/preview/</link>
-      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>http://chanrom.github.io/zh-cn/tags/preview/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Shortcodes</title>
-      <link>http://chanrom.github.io/zh-cn/tags/shortcodes/</link>
-      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>http://chanrom.github.io/zh-cn/tags/shortcodes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tag 6</title>
-      <link>http://chanrom.github.io/zh-cn/tags/tag-6/</link>
-      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>http://chanrom.github.io/zh-cn/tags/tag-6/</guid>
-      <description></description>
-    </item>
     
   </channel>
 </rss>
