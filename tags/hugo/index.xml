@@ -12,12 +12,21 @@
     
     
     <item>
-      <title>爱你媳妇儿</title>
+      <title>Hello World</title>
       <link>http://chanrom.github.io/post/test/</link>
       <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>http://chanrom.github.io/post/test/</guid>
-      <description>爱你媳妇儿 哈哈</description>
+      <description>Hello World test</description>
+    </item>
+    
+    <item>
+      <title>使用Github搭建Hugo博客站</title>
+      <link>http://chanrom.github.io/post/mimic/how-to/</link>
+      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://chanrom.github.io/post/mimic/how-to/</guid>
+      <description>为什么要搭建个人博客 我们在网络上获取别人的经验和知识的时候，通常呈现出来的都是一篇篇页面精致、内容专业的博客，令人耳目一新。有自己的博客，可</description>
     </item>
     
   </channel>

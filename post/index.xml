@@ -12,21 +12,21 @@
     
     
     <item>
-      <title>爱你媳妇儿</title>
+      <title>Hello World</title>
       <link>http://chanrom.github.io/post/test/</link>
       <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>http://chanrom.github.io/post/test/</guid>
-      <description>爱你媳妇儿 哈哈</description>
+      <description>Hello World test</description>
     </item>
     
     <item>
-      <title>Linux学习从入门到精通推荐书籍</title>
-      <link>http://chanrom.github.io/post/test2/</link>
-      <pubDate>Fri, 18 Aug 2017 00:00:00 +0000</pubDate>
+      <title>使用Github搭建Hugo博客站</title>
+      <link>http://chanrom.github.io/post/mimic/how-to/</link>
+      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://chanrom.github.io/post/test2/</guid>
-      <description>如何学习Linux 在现在的生活，生产，研究等领域，Linux已经无所不在，从我们使用的手机，车载设备，到服务器，桌面电脑等，Linux已经成</description>
+      <guid>http://chanrom.github.io/post/mimic/how-to/</guid>
+      <description>为什么要搭建个人博客 我们在网络上获取别人的经验和知识的时候，通常呈现出来的都是一篇篇页面精致、内容专业的博客，令人耳目一新。有自己的博客，可</description>
     </item>
     
   </channel>
