@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Chanrom - Logging life</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 22 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://chanrom.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,18 +14,18 @@
     <item>
       <title>Github</title>
       <link>http://chanrom.github.io/tags/github/</link>
-      <pubDate>Thu, 22 Mar 2018 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>http://chanrom.github.io/tags/github/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>教程</title>
-      <link>http://chanrom.github.io/tags/%E6%95%99%E7%A8%8B/</link>
-      <pubDate>Thu, 22 Mar 2018 00:00:00 +0000</pubDate>
+      <title>Hugo</title>
+      <link>http://chanrom.github.io/tags/hugo/</link>
+      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://chanrom.github.io/tags/%E6%95%99%E7%A8%8B/</guid>
+      <guid>http://chanrom.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     
