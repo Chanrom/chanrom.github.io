@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: http://chanrom.github.io/sitemap.xml
