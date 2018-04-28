@@ -53,6 +53,136 @@
 
 &lt;p&gt;二叉树的遍历需要熟悉：前序遍历、中序遍历、后序遍历以及层次遍历，包括递归的实现和循环的实现。以下分别给出各个算法的Python实现。&lt;/p&gt;
 
+&lt;h2 id=&#34;前序遍历-递归&#34;&gt;前序遍历-递归&lt;/h2&gt;
+
+&lt;p&gt;递归的实现很简单：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;    def preorderTraversal(self, root):
+        res = []
+        def pre(root):
+            if not root:
+                return 
+            res.append(root.val)
+            pre(root.left)
+            pre(root.right)
+        pre(root)
+        return res
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;前序遍历-循环&#34;&gt;前序遍历-循环&lt;/h2&gt;
+
+&lt;p&gt;相比递归实现，循环实现具有更高的效率，其实现需要借助栈来实现：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;    def preorderTraversal(self, root):
+        stack = []
+        res = []
+        while (root or len(stack) != 0): # 注意这个终止条件
+            if root:
+                res.append(root.val)
+                stack.append(root)
+                root = root.left
+            else:
+                root = stack[len(stack) - 1]
+                stack.pop()
+                root = root.right
+        return res
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;中序遍历-递归&#34;&gt;中序遍历-递归&lt;/h2&gt;
+
+&lt;p&gt;基本同上：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;    def inorderTraversal(self, root):
+        res = []
+        def pre(root):
+            if not root:
+                return 
+            pre(root.left)
+            res.append(root.val)
+            pre(root.right)
+        pre(root)
+        return res
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;中序遍历-循环&#34;&gt;中序遍历-循环&lt;/h2&gt;
+
+&lt;p&gt;中序遍历的循环实现和前序遍历很类似，无非就是（出栈）打印的时机不一样。在代码里的体现就是&lt;code&gt;res.append(root.val)&lt;/code&gt;：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;    def inorderTraversal(self, root):
+        stack = []
+        res = []
+        while (root or len(stack) != 0): # 注意这个终止条件
+            if root:
+                stack.append(root)
+                root = root.left
+            else:
+                root = stack[len(stack) - 1]
+                res.append(root.val)
+                stack.pop()
+                root = root.right
+        return res
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;后序遍历-递归&#34;&gt;后序遍历-递归&lt;/h2&gt;
+
+&lt;p&gt;递归很简单，直接给出代码：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;    def postorderTraversal(self, root):
+        res = []
+        def pre(root):
+            if not root:
+                return 
+            pre(root.left)
+            pre(root.right)
+            res.append(root.val)
+        pre(root)
+        return res
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;后序遍历-循环&#34;&gt;后序遍历-循环&lt;/h2&gt;
+
+&lt;p&gt;相比前两个而言，后序遍历会比较复杂一点，因为在后序遍历中，必须最后打印根节点的值，也就是说必须先打印左子树和右子树的值。在具体的实现当中，我们可以使用一个&lt;code&gt;last&lt;/code&gt;指针，表示在上一时刻访问多的节点。当某个节点没有左右子节点或者右子节点已经访问过了（此时左子节点肯定也访问过了），这个节点的值才可以被打印出来。以下代码：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;    def postorderTraversal(self, root):
+        stack = []
+        res = []
+        last = None
+        while (root or len(stack) != 0): # 注意这个终止条件
+            while root: # 一直往左下搜索，使节点入栈
+                stack.append(root)
+                root = root.left
+            root = stack[len(stack) - 1] # 开始分析栈内节点
+            if (root.right and root.right != last): # 如果当前节点有右子节点并且没被访问过，又要开始对右子树的访问
+                root = root.right
+            else: # 不是以上情况的时候就可以输出当前根节点了
+                res.append(root.val)
+                stack.pop()
+                last = root # 记录
+                root = None # 保证下一次处理栈顶元素
+        return res
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;层序遍历-循环&#34;&gt;层序遍历-循环&lt;/h2&gt;
+
+&lt;p&gt;第一种层序遍历要求的打印顺序是：根节点先打印叶子节点最后打印的。思路是每遍历完当前层所有的节点的时候，将当前层内节点拥有的子节点装入列表，以备下一步再开始之前的步骤：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;    def levelOrder(self, root):
+        if not root:
+            return []
+        ans, level = [], [root]
+        while level:
+            ans.append([node.val for node in level])
+            temp = []
+            for node in level:
+                temp.extend([node.left, node.right])
+            level = [leaf for leaf in temp if leaf]
+        return ans
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;层序遍历2-循环&#34;&gt;层序遍历2-循环&lt;/h2&gt;
+
+&lt;p&gt;第一种层序遍历要求的打印顺序是和之前相反，但这个在Python中不是大问题，直接一条命令就可以&lt;code&gt;res[::-1]&lt;/code&gt;&lt;/p&gt;
+
 &lt;h1 id=&#34;字符串翻转&#34;&gt;字符串翻转&lt;/h1&gt;
 
 &lt;p&gt;字符串的翻转涉及到比较多的题目，总结一下其实有不少题目有相似之处或者说是承前或者启后的，&lt;/p&gt;
@@ -61,17 +191,60 @@
     </item>
     
     <item>
-      <title>Hello World</title>
-      <link>http://chanrom.github.io/post/test/</link>
-      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
+      <title>Markdown</title>
+      <link>http://chanrom.github.io/post/mimic/markdown/</link>
+      <pubDate>Sat, 28 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://chanrom.github.io/post/test/</guid>
+      <guid>http://chanrom.github.io/post/mimic/markdown/</guid>
       
         <description>
 
-&lt;h1 id=&#34;hello-world&#34;&gt;Hello World&lt;/h1&gt;
+&lt;h1 id=&#34;参考网站&#34;&gt;参考网站&lt;/h1&gt;
 
-&lt;p&gt;test&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://segmentfault.com/markdown&#34;&gt;Markdown 编辑器语法指南&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;代码高亮&#34;&gt;代码高亮&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;python sdf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;标题&#34;&gt;标题&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;# 标题
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;标题1&#34;&gt;标题1&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;标题1
+======
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;标题2&#34;&gt;标题2&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;标题2
+-----
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;大标题&#34;&gt;大标题&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;## 大标题 ##
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;小标题&#34;&gt;小标题&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;### 小标题 ###
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&#34;粗体&#34;&gt;粗体&lt;/h1&gt;
+
+&lt;p&gt;&lt;em&gt;斜体文本&lt;/em&gt;    &lt;em&gt;斜体文本&lt;/em&gt;
+&lt;strong&gt;粗体文本&lt;/strong&gt;    &lt;strong&gt;粗体文本&lt;/strong&gt;
+&lt;strong&gt;&lt;em&gt;粗斜体文本&lt;/em&gt;&lt;/strong&gt;    &lt;strong&gt;&lt;em&gt;粗斜体文本&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;*斜体文本*    _斜体文本_
+**粗体文本**    __粗体文本__
+***粗斜体文本***    ___粗斜体文本___
+&lt;/code&gt;&lt;/pre&gt;
 </description>
       
     </item>

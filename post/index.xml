@@ -21,12 +21,12 @@
     </item>
     
     <item>
-      <title>Hello World</title>
-      <link>http://chanrom.github.io/post/test/</link>
-      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
+      <title>Markdown</title>
+      <link>http://chanrom.github.io/post/mimic/markdown/</link>
+      <pubDate>Sat, 28 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://chanrom.github.io/post/test/</guid>
-      <description>Hello World test</description>
+      <guid>http://chanrom.github.io/post/mimic/markdown/</guid>
+      <description>参考网站 Markdown 编辑器语法指南 代码高亮 python sdf 标题 # 标题 标题1 标题1 ====== 标题2 标题2 ----- 大标题 ## 大标题 ## 小标题 ### 小标题 ### 粗体 斜体文本 斜体文本 粗体文本 粗体文</description>
     </item>
     
     <item>

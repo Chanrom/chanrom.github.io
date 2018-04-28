@@ -12,15 +12,6 @@
     
     
     <item>
-      <title>Hello World</title>
-      <link>http://chanrom.github.io/post/test/</link>
-      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://chanrom.github.io/post/test/</guid>
-      <description>Hello World test</description>
-    </item>
-    
-    <item>
       <title>使用Github搭建Hugo博客站</title>
       <link>http://chanrom.github.io/post/mimic/how-to/</link>
       <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
