@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dnn on Chanrom - Logging life</title>
+    <link>http://chanrom.github.io/tags/dnn/</link>
+    <description>Recent content in Dnn on Chanrom - Logging life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 10 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://chanrom.github.io/tags/dnn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Batch Normalization</title>
+      <link>http://chanrom.github.io/post/dnn/batchnorm/</link>
+      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://chanrom.github.io/post/dnn/batchnorm/</guid>
+      <description>介绍 Batch Normalization是很多深层网络会使用的一种训练trick，这篇博客主要想从谷歌的原始论文和一些大牛的博客出发，重新阐述一下这</description>
+    </item>
+    
+  </channel>
+</rss>

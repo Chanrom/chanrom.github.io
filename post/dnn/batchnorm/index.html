@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Leetcode总结 - Chanrom - Logging life</title>
+  <title>Batch Normalization - Chanrom - Logging life</title>
   <link rel="alternate" hreflang="en" href="http://chanrom.github.io" />
 
 <meta name="renderer" content="webkit" />
@@ -25,7 +25,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="Chanrom" />
-  <meta name="description" content="Leetcode 一直知道自己的算法能力偏弱，但是却没有时间针对性地练习过相关的能力。趁着自己有想找一份暑期实习的计划下开始刷Leetcode，刚开始时，即" />
+  <meta name="description" content="介绍 Batch Normalization是很多深层网络会使用的一种训练trick，这篇博客主要想从谷歌的原始论文和一些大牛的博客出发，重新阐述一下这" />
 
   <meta name="keywords" content="Chanrom, NLP, Life" />
 
@@ -37,7 +37,7 @@
 <meta name="generator" content="Hugo 0.39" />
 
 
-<link rel="canonical" href="http://chanrom.github.io/post/leetcode/leetcode/" />
+<link rel="canonical" href="http://chanrom.github.io/post/dnn/batchnorm/" />
 
 
 
@@ -57,20 +57,16 @@
 
 
 
-<meta property="og:title" content="Leetcode总结" />
-<meta property="og:description" content="Leetcode 一直知道自己的算法能力偏弱，但是却没有时间针对性地练习过相关的能力。趁着自己有想找一份暑期实习的计划下开始刷Leetcode，刚开始时，即" />
+<meta property="og:title" content="Batch Normalization" />
+<meta property="og:description" content="介绍 Batch Normalization是很多深层网络会使用的一种训练trick，这篇博客主要想从谷歌的原始论文和一些大牛的博客出发，重新阐述一下这" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://chanrom.github.io/post/leetcode/leetcode/" />
+<meta property="og:url" content="http://chanrom.github.io/post/dnn/batchnorm/" />
 
 
 
-<meta property="article:published_time" content="2018-04-28T00:00:00&#43;00:00"/>
+<meta property="article:published_time" content="2018-05-10T00:00:00&#43;00:00"/>
 
-<meta property="article:modified_time" content="2018-04-28T00:00:00&#43;00:00"/>
-
-
-
-
+<meta property="article:modified_time" content="2018-05-10T00:00:00&#43;00:00"/>
 
 
 
@@ -78,20 +74,24 @@
 
 
 
-<meta itemprop="name" content="Leetcode总结">
-<meta itemprop="description" content="Leetcode 一直知道自己的算法能力偏弱，但是却没有时间针对性地练习过相关的能力。趁着自己有想找一份暑期实习的计划下开始刷Leetcode，刚开始时，即">
-
-
-<meta itemprop="datePublished" content="2018-04-28T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2018-04-28T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1791">
 
 
 
-<meta itemprop="keywords" content="leetcode," />
+
+<meta itemprop="name" content="Batch Normalization">
+<meta itemprop="description" content="介绍 Batch Normalization是很多深层网络会使用的一种训练trick，这篇博客主要想从谷歌的原始论文和一些大牛的博客出发，重新阐述一下这">
+
+
+<meta itemprop="datePublished" content="2018-05-10T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-05-10T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="3436">
+
+
+
+<meta itemprop="keywords" content="dnn," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Leetcode总结"/>
-<meta name="twitter:description" content="Leetcode 一直知道自己的算法能力偏弱，但是却没有时间针对性地练习过相关的能力。趁着自己有想找一份暑期实习的计划下开始刷Leetcode，刚开始时，即"/>
+<meta name="twitter:title" content="Batch Normalization"/>
+<meta name="twitter:description" content="介绍 Batch Normalization是很多深层网络会使用的一种训练trick，这篇博客主要想从谷歌的原始论文和一些大牛的博客出发，重新阐述一下这"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -211,13 +211,13 @@
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">Leetcode总结</h1>
+      <h1 class="post-title">Batch Normalization</h1>
       
       <div class="post-meta">
-        <span class="post-time"> 2018-04-28 </span>
+        <span class="post-time"> 2018-05-10 </span>
         
-        <span class="more-meta"> 1791 words </span>
-        <span class="more-meta"> 4 min read </span>
+        <span class="more-meta"> 3436 words </span>
+        <span class="more-meta"> 7 min read </span>
       </div>
     </header>
 
@@ -228,7 +228,9 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#leetcode">Leetcode</a></li>
+<li><a href="#介绍">介绍</a></li>
+<li><a href="#the-insights">The Insights</a></li>
+<li><a href="#internal-covariate-shift">Internal Covariate Shift</a></li>
 <li><a href="#二叉树的遍历">二叉树的遍历</a>
 <ul>
 <li><a href="#前序遍历-递归">前序遍历-递归</a></li>
@@ -258,7 +260,46 @@
     <div class="post-content">
       
 
-<h1 id="leetcode">Leetcode</h1>
+<h1 id="介绍">介绍</h1>
+
+<p><code>Batch Normalization</code>是很多深层网络会使用的一种训练<code>trick</code>，这篇博客主要想从谷歌的原始论文和一些大牛的博客出发，重新阐述一下这个训练深层网络的“大杀器”。</p>
+
+<h1 id="the-insights">The Insights</h1>
+
+<p>我们知道深度学习在图像、语言和文本等领域都取得了很大的进步。在这当中，随机梯度下降（<code>SGD</code>）作为一种有效的训练深层网络的方法而被很多人所熟知。在<code>SGD</code>的基础之上的一些改进优化算法，如<code>Adam</code>、<code>Adagrad</code>和<code>NAdam</code>等通常都能将深层网络训练到最佳的性能。</p>
+
+<p>举个例子，假设我们要使用<code>SGD</code>来优化一个含有参数 \( \Theta \) 的网络：
+$$
+\Theta = argmin_{\Theta} \frac{1}{N} \sum_{i=1}^N l(x_i, \Theta),
+$$
+每个<code>step</code>使用梯度下降来更新一次 \( \Theta \)，最后得到最优的值。每个<code>step</code>可以使用整个数据集来计算一次梯度，也可以使用一个样本来计算一次梯度，但这两种方法都有各自的缺点，所以一般使用的是批处理（<code>mini-batch</code>）随机梯度下降。<strong>其优点在于</strong>：1) \( m \) 个样本的梯度近似于整个数据集的梯度，相对来说梯度比较稳定，并且随着\( m \) 的增大，这种稳定性更好；2) 相比于利用单个样本去计算梯度，批处理的方式更高效。数学上看，<code>mini-batch</code>的方式每次使用 \( m \) 个样本计算一次梯度，其梯度为：
+$$
+\frac{1}{m} \frac{\partial l(x_i, \Theta)}{\partial \Theta}.
+$$</p>
+
+<p>虽然随机梯度下降的方法简单高效，使得训练很深的网络也不在话下，但是想要使得深层网络获得更佳的性能却仍然不是一件容易的事情。实际上，想要深层网络训练的好，模型超参数、学习速率和模型参数的初始化方法的选择都至关重要。这些因素在网络变得更深的时候显得格外重要，因为底层网络参数一丁点的改变都将影响高层网络的输入。</p>
+
+<p>在领域适应（<code>domain adaptation</code>）的研究当中，一个本质的问题就是某个学习系统的输入分布不是固定不变的（如训练样本的分布和测试样本的分布不一致会导致分类器的性能降低），这种情况称之为<code>covariate shift</code>。<code>Covariate shift</code>导致学习系统需要有额外的能力去适应输入分布的变化。结合之前提到的深层网络的训练问题，如果我们把一个深层网络的每一层全部分开来看，<code>covariate shift</code>的问题同样存在。假设某个网络有这样一个计算过程：
+$$
+l = F_2(F_1(u, \Theta_1), \Theta_2),
+$$
+\( F \) 指任意的函数变换。当我们学习参数\( \Theta_2\) 的时候，可以将 \( F_2 \) 的输入看做是 \( v = F_1(u, \Theta_1) \)：
+$$
+l = F_2(v, \Theta).
+$$
+这样，一次梯度下降可以用如下计算方式：
+$$
+\Theta_2 \leftarrow \Theta_2 - \frac{\alpha}{m} \sum_{i = 1}^m \frac{\partial F_2(v_i, \Theta_2)}{\partial \Theta_2}
+$$
+所以从上面的角度看待深层网络的训练时我们发现，如果输入 \( v \) 的分布是固定不变的，那么训练含有参数 \(\Theta_2 \)的高层网络就会变得更加容易，也能训练的更好：在训练的过程中，\(\Theta_2 \)不需要调整自己去“补偿”因为输入分布变化所带来的不利影响。</p>
+
+<p>前面我们了解到深度网络某一层的输入保持固定不变的分布形式对该层的训练是非常有利的，实际上输入保持固定不变的分布还能为除该层之外的子网络带来益处。考虑深层网络的某一层使用的是<code>sigmoid</code>激活函数：
+$$
+z = g(W v + b),
+$$
+其中 \( v \) 是该层的输入，其他为参数。\(g \) 是<code>sigmoid</code>函数。随着 \(|x|\) 的增大，\( g^\prime(x) \) 都是趋近于0的。这就意味着如果\( x = W v + b \) 中某一维度的绝对值如果不能比较小的话，能够传给输入 \( v \) 的梯度就会<code>vanish</code>，进而训练就会变得很慢。但是呢，因为深层网络层数很多，这往往是不可避免的：在不断训练的过程中，梯度要么很大要么很小，所以到头来 \(x \) 还是慢慢进入到非线性函数的<code>saturated regime</code>，使得几乎没有梯度能够往底层的网络传播（<code>ReLU</code>）的设计就是为了缓解非线性激活函数梯度消失的这个问题）。那如果我们使得输入始终稳定为一个较稳定的分布，那么是不是有可能在训练的过程中降低激活函数陷入<code>saturated regime</code>的可能性，使得训练加快呢？</p>
+
+<h1 id="internal-covariate-shift">Internal Covariate Shift</h1>
 
 <p>一直知道自己的算法能力偏弱，但是却没有时间针对性地练习过相关的能力。趁着自己有想找一份暑期实习的计划下开始刷Leetcode，刚开始时，即使是easy的题目也解的比较费力，在刷到100题的时候，解easy题的速度明显快了很多。但是在面对medium难度的题依然要花很长的时间才可以AC。本着融会贯通、不停进步的思想，我将在这个博客记录、总结一下遇到的题目，以便自己以及有兴趣一起学习的同学参考。</p>
 
@@ -485,7 +526,7 @@
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">2018-04-28</span>
+    <span class="item-content">2018-05-10</span>
   </p>
   
   <p class="copyright-item">
@@ -500,21 +541,16 @@
     <footer class="post-footer">
       <div class="post-tags">
           
-          <a href="/tags/leetcode/">leetcode</a>
+          <a href="/tags/dnn/">dnn</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/dnn/batchnorm/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Batch Normalization</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
         
-          <a class="next" href="/post/mimic/markdown/">
-            <span class="next-text nav-default">Markdown</span>
+          <a class="next" href="/post/leetcode/leetcode/">
+            <span class="next-text nav-default">Leetcode总结</span>
             <span class="prev-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -531,10 +567,10 @@
     <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
   <script type="text/javascript">
   const gitment = new Gitment({
-    id: 'leetcode.md',
-    title: 'Leetcode总结',
+    id: 'batchnorm.md',
+    title: 'Batch Normalization',
     link: decodeURI(location.href),
-    desc: 'Leetcode 一直知道自己的算法能力偏弱，但是却没有时间针对性地练习过相关的能力。趁着自己有想找一份暑期实习的计划下开始刷Leetcode，刚开始时，即',
+    desc: '介绍 Batch Normalization是很多深层网络会使用的一种训练trick，这篇博客主要想从谷歌的原始论文和一些大牛的博客出发，重新阐述一下这',
     owner: 'Chanrom',
     repo: 'comments',
     oauth: {
@@ -594,6 +630,13 @@
   <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
   <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
 <script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'></script>
 
 
 

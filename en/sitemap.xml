@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>http://chanrom.github.io/post/dnn/batchnorm/</loc>
+    <lastmod>2018-05-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://chanrom.github.io/post/leetcode/leetcode/</loc>
     <lastmod>2018-04-28T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -44,6 +51,13 @@
   </url>
   
   <url>
+    <loc>http://chanrom.github.io/tags/dnn/</loc>
+    <lastmod>2018-05-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://chanrom.github.io/tags/github/</loc>
     <lastmod>2018-04-18T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -73,14 +87,14 @@
   
   <url>
     <loc>http://chanrom.github.io/post/</loc>
-    <lastmod>2018-04-28T00:00:00+00:00</lastmod>
+    <lastmod>2018-05-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://chanrom.github.io/tags/</loc>
-    <lastmod>2018-04-18T00:00:00+00:00</lastmod>
+    <lastmod>2018-05-10T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
