@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Backtracking on Chanrom - Logging life</title>
+    <link>http://chanrom.github.io/tags/backtracking/</link>
+    <description>Recent content in Backtracking on Chanrom - Logging life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 11 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://chanrom.github.io/tags/backtracking/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Backtracking</title>
+      <link>http://chanrom.github.io/post/leetcode/backtracking/</link>
+      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://chanrom.github.io/post/leetcode/backtracking/</guid>
+      <description>回溯 看题目看的我头晕，这种嵌套的实在是烧脑子啊。 回溯统一解法) 回溯全集</description>
+    </item>
+    
+  </channel>
+</rss>

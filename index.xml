@@ -35,6 +35,24 @@
     </item>
     
     <item>
+      <title>Backtracking</title>
+      <link>http://chanrom.github.io/post/leetcode/backtracking/</link>
+      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://chanrom.github.io/post/leetcode/backtracking/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;回溯&#34;&gt;回溯&lt;/h1&gt;
+
+&lt;p&gt;看题目看的我头晕，这种嵌套的实在是烧脑子啊。
+&lt;a href=&#34;https://leetcode.com/problems/combination-sum/discuss/16502/A-general-approach-to-backtracking-questions-in-Java-Subsets-Permutations-Combination-Sum-Palindrome-Partitioning&#34;&gt;回溯统一解法&lt;/a&gt;)
+&lt;a href=&#34;https://segmentfault.com/a/1190000006121957&#34;&gt;回溯全集&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>Batch Normalization</title>
       <link>http://chanrom.github.io/post/dnn/batchnorm/</link>
       <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
@@ -313,6 +331,8 @@ $$
 &lt;h1 id=&#34;两个指针&#34;&gt;两个指针&lt;/h1&gt;
 
 &lt;p&gt;使用两个指针可以解决不少的问题，特别是有关数组的题目上，这里从易到难介绍几道题目(从二分搜索到复杂一点的二分搜索33，34)。&lt;/p&gt;
+
+&lt;h1 id=&#34;回溯&#34;&gt;回溯&lt;/h1&gt;
 </description>
       
     </item>
