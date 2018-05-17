@@ -35,6 +35,212 @@
     </item>
     
     <item>
+      <title>NLP一些经典算法</title>
+      <link>http://chanrom.github.io/post/nlp/basic/</link>
+      <pubDate>Thu, 17 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://chanrom.github.io/post/nlp/basic/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;tf-idf&#34;&gt;TF-IDF&lt;/h1&gt;
+
+&lt;h2 id=&#34;简介&#34;&gt;简介&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;TF-IDF&lt;/code&gt;，指的是词频-逆文档频率（&lt;code&gt;Term Frequency-Inverse Document Frequency&lt;/code&gt;），一种用于文档检索的加权计算方法，常用于文档的向量表示。&lt;code&gt;TF-IDF&lt;/code&gt;可表示某个词在当前文档的重要程度，具体地，词的重要性和它在文档中出现的次数成正比，但是和它在整个语料库出现的次数成反比。通俗的说就是，一个词语在一篇文档中出现的次数越多而在所有文档出现的次数越少，就越能代表这个文档。&lt;/p&gt;
+
+&lt;h2 id=&#34;定义&#34;&gt;定义&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;TF-IDF&lt;/code&gt;的定义如下：
+$$
+TFIDF_{i,j} = \frac{N_{i,j}}{N_{\cdot j}} \log (\frac{D}{D_i})
+$$
+其中\( N_{i,j} \) 表示词\( i \) 出现在文档\( j \)的次数；&lt;/p&gt;
+
+&lt;p&gt;\( N_{\cdot, j} \) 表示文档\( j \)一共有多少词；&lt;/p&gt;
+
+&lt;p&gt;\( D \) 表示文档的总数；&lt;/p&gt;
+
+&lt;p&gt;\( D_{i} \) 表示有多少文档出现过词\( i \)。&lt;/p&gt;
+
+&lt;p&gt;注意，以上提到的词一般先经过了无用词（&lt;code&gt;stopwords&lt;/code&gt;）的过滤。&lt;/p&gt;
+
+&lt;h1 id=&#34;lsa&#34;&gt;LSA&lt;/h1&gt;
+
+&lt;h2 id=&#34;简介-1&#34;&gt;简介&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;LSA&lt;/code&gt;（潜在语义分析）目的是解决通过搜索词（&lt;code&gt;search words&lt;/code&gt;）定位出相关的文档的问题。&lt;code&gt;LSA&lt;/code&gt;的基本原理是将文档和单词都映射到同一个语义空间（&lt;code&gt;concept space&lt;/code&gt;）中，并在该空间进行对比分析。&lt;/p&gt;
+
+&lt;h2 id=&#34;定义-1&#34;&gt;定义&lt;/h2&gt;
+
+&lt;p&gt;首先需要构建词-文档的矩阵 \(A\)，\(A\) 中的每个元素 \(A_{i j}\) 表示搜索词 \(w_i\) 在文档 \(d_j\) 出现的次数（一般又转换为&lt;code&gt;TF-IDF&lt;/code&gt;并作平滑处理）。&lt;/p&gt;
+
+&lt;p&gt;接着对 \(A\) 做奇异值分解：
+$$
+A = U S V^T
+$$
+\(U\) 为一个 \(R^{t \times n}\) 的正交矩阵，每行代表一个词的表示，其含义为该词在语义空间的每个维度上中重要程度；&lt;/p&gt;
+
+&lt;p&gt;\(V\) 为一个 \(R^{d \times n}\) 的正交矩阵，每行代表一个文档的表示，其含义为该文档在语义空间的每个维度上中重要程度；&lt;/p&gt;
+
+&lt;p&gt;\(S\) 为一个 \(R^{n \times n}\) 的奇异矩阵，每个元素刻画了词和文档映射到语义空间后二者的相关度。&lt;/p&gt;
+
+&lt;h2 id=&#34;优缺点&#34;&gt;优缺点&lt;/h2&gt;
+
+&lt;p&gt;优点：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;低维的向量表示可以缓解多词一义的情况（一词多义应该也可以有一点的作用，只是很有限）&lt;/li&gt;
+&lt;li&gt;降维可以去除部分噪音，特征的表示更加鲁棒&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;缺点：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;貌似因为一个词就是一个表示，不能很好的处理一词多义的情况&lt;/li&gt;
+&lt;li&gt;SVD分解的复杂度很高&lt;/li&gt;
+&lt;li&gt;物理解释偏弱&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;plsa&#34;&gt;pLSA&lt;/h1&gt;
+
+&lt;h2 id=&#34;介绍&#34;&gt;介绍&lt;/h2&gt;
+
+&lt;p&gt;pLSA是在LSA的基础上提出的，一般就可以称之为主题模型。pLSA在模型中引入了一个隐变量：主题变量z，进一步刻画了文档生成的过程。在介绍pLSA之前，先定义基本的符号：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;\( w \) 表示词，\( V\) 表示所有单词的个数，也就是词表大小（在语料库中统计，固定值）&lt;/li&gt;
+&lt;li&gt;\( z\) 表示主题，\( K\) 代表主题的个数（预先设定，固定值）&lt;/li&gt;
+&lt;li&gt;\( D = (d_1, d_2, &amp;hellip;, d_M)\)，其中 \( M\) 代表语料库中文档数目&lt;/li&gt;
+&lt;li&gt;\( d = (w_1, w_2, &amp;hellip;, w_N)\)，其中 \( N\) 代表该文档内的词的数目&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;pLSA定义了语料库的生成过程（如图所示）：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;对于每一篇文档 \( d \)
+
+&lt;ul&gt;
+&lt;li&gt;对于该文档的每个位置&lt;/li&gt;
+&lt;li&gt;选择一个主题 \( z \)&lt;/li&gt;
+&lt;li&gt;根据主题选择词 \( w\)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p align=&#34;center&#34;&gt; 
+&lt;img src=&#34;http://chanrom.github.io/pLSA.jpeg&#34;&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&#34;定义-2&#34;&gt;定义&lt;/h2&gt;
+
+&lt;p&gt;在形式化定义如上的生成过程之前，我们先定义一些变量：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;\( p(d_i) \) 表示语料库中某篇文档被选中的概率&lt;/li&gt;
+&lt;li&gt;\( p(w_j | d_i)\) 表示给定文档 \( d_i\) 时，词 \( w_j\) 出现的概率&lt;/li&gt;
+&lt;li&gt;\( p(z_k | d_i)\) 表示给定文档 \( d_i\) 时，主题 \( z_k\) 出现的概率&lt;/li&gt;
+&lt;li&gt;\( p(w_j | z_k)\) 表示主题 \( z_k\) 时，词 \( w_j\) 出现的概率&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;重写以上的生成过程：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;按照概率 \( p(d) \) 选择一篇文档 \( d_i \) （一般计为等概率的）&lt;/li&gt;
+&lt;li&gt;按照文档-主题分布 \( p(z | d_i)\) 选择某个主题 \( z_k \)&lt;/li&gt;
+&lt;li&gt;按照主题-词分布 \( p(w | z_k)\) 选择某个词 \( w_j \)&lt;/li&gt;
+&lt;li&gt;根据 \( M \) 和 \( N \) 重复以上过程&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;求解&#34;&gt;求解&lt;/h2&gt;
+
+&lt;p&gt;上一小节我们描述了pLSA的生成过程。通常来说我们拿到的仅仅只有语料库，我们更希望获得的是模型潜在的主题信息，这样就可以使用主题信息去刻画文本和词的关系。由以上公式的定义可知，\( p(w_j | d_i)\) 是已知的（参看TF-IDF的计算方法），我们可以根据大量的已知的文档-词的信息推出文档-主题以及主题-词的信息：&lt;/p&gt;
+
+&lt;p&gt;$$
+p(w_j| d_i) = \sum_{k=1}^K p(w_j|z_k) p(z_k|d_i)
+$$&lt;/p&gt;
+
+&lt;p&gt;因此某文档中某个词的生成概率为:&lt;/p&gt;
+
+&lt;p&gt;$$
+p(w_j, d_i) = p(d_i) p(w_j| d_i)&lt;br /&gt;
+ = p(d_i) \sum_{k=1}^K p(w_j|z_k) p(z_k|d_i)
+$$
+\(p(d_i)\)可以事先计算出来，而 \( p(w_j|z_k)\) 和 \( p(z_k|d_i)\) 是未知的。因此为了得到主题的信息，必须估计 \( p(w_j|z_k)\) 和 \( p(z_k|d_i)\) 的参数。因为模型含有隐变量，考虑使用EM算法。&lt;/p&gt;
+
+&lt;h2 id=&#34;em参数估计&#34;&gt;EM参数估计&lt;/h2&gt;
+
+&lt;p&gt;在介绍EM参数估计之前，我们先列出模型的参数并一一解释。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;假定 \( p(w_j|z_k)\) 服从多项式分布，该分布的参数 \( \phi_k \) 表示的是主题 \( z_k \) 在词表（一共\( V \) 个词）上面的一个“分布”，即每个词 \( w_j \) 在该参数里都对应一个元素 \( \phi_{k, j} \)，代表了 \( w_j \) 出现在主题 \( z_k \) 上的概率：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;$$
+ p(w_j|z_k)= \phi_{k, j} ，\sum_{j = 1}^V \phi_{k, j} = 1
+$$&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;假定 \( p(z_k|d_i)\) 服从多项式分布，该分布的参数 \( \theta_i \) 表示的是文本 \( d_i \) 在主题（一共 \( K \) 个主题上面的一个“分布”，即每个主题 \( z_k \) 在该参数里都对应一个元素 \( \theta_{i, k} \)，代表了主题 \( z_k \) 出现在文档 \( d_i \) 上的概率：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;$$
+ p(z_k|d_i)= \theta_{i, k} ，\sum_{k = 1}^K \theta_{i, k} = 1
+$$&lt;/p&gt;
+
+&lt;p&gt;因此我们要最终求解的两个参数矩阵：&lt;/p&gt;
+
+&lt;p&gt;$$
+\Phi = [\phi_1, &amp;hellip;, \phi_K]
+$$&lt;/p&gt;
+
+&lt;p&gt;$$
+\Theta = [\theta_1, .., \theta_M]
+$$&lt;/p&gt;
+
+&lt;p&gt;由于词和词的生成是独立的，文档和文档的生成也是独立的，因此整个语料库的生成词的概率为：&lt;/p&gt;
+
+&lt;p&gt;$$
+p(W | D) = \prod_{i=1}^M \prod_{j=1}^N p(w_j, d_i) ^{n(d_i, w_j)}
+$$
+其中，\( {n(d_i, w_j)} \) 表示词 \( w_j \) 在文档 \( d_i \) 出现的次数。于是我们可以得到对数似然函数：&lt;/p&gt;
+
+&lt;p&gt;$$
+l(\Phi, \Theta) = \sum_{i=1}^M \sum_{j=1}^n n(d_i, w_j) \log p(w_j, d_i)
+$$
+$$
+~~~~~~~~~~~~~~ = \sum_{i=1}^M \sum_{j=1}^n n(d_i, w_j) \log p(w_j, d_i)
+$$&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/pipisorry/article/details/42560693&#34;&gt;继续请参看&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://people.cs.pitt.edu/~milos/courses/cs3750/lectures/class11.pdf&#34;&gt;2&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://vdisk.weibo.com/s/bjfcErv7QQc&#34;&gt;3&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>参数估计</title>
+      <link>http://chanrom.github.io/post/nlp/estimation/</link>
+      <pubDate>Thu, 17 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://chanrom.github.io/post/nlp/estimation/</guid>
+      
+        <description>
+
+&lt;h1 id=&#34;参数估计方法&#34;&gt;参数估计方法&lt;/h1&gt;
+
+&lt;h2 id=&#34;极大似然估计&#34;&gt;极大似然估计&lt;/h2&gt;
+
+&lt;h2 id=&#34;最大后验估计&#34;&gt;最大后验估计&lt;/h2&gt;
+
+&lt;h2 id=&#34;贝叶斯估计&#34;&gt;贝叶斯估计&lt;/h2&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>Backtracking</title>
       <link>http://chanrom.github.io/post/leetcode/backtracking/</link>
       <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>

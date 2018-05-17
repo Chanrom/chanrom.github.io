@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nlp on Chanrom - Logging life</title>
+    <link>http://chanrom.github.io/tags/nlp/</link>
+    <description>Recent content in Nlp on Chanrom - Logging life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 17 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://chanrom.github.io/tags/nlp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NLP一些经典算法</title>
+      <link>http://chanrom.github.io/post/nlp/basic/</link>
+      <pubDate>Thu, 17 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://chanrom.github.io/post/nlp/basic/</guid>
+      <description>TF-IDF 简介 TF-IDF，指的是词频-逆文档频率（Term Frequency-Inverse Document Frequency），一种用于文档检索的加权计算方法，常用于文档的向量表示。TF-I</description>
+    </item>
+    
+    <item>
+      <title>参数估计</title>
+      <link>http://chanrom.github.io/post/nlp/estimation/</link>
+      <pubDate>Thu, 17 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://chanrom.github.io/post/nlp/estimation/</guid>
+      <description>参数估计方法 极大似然估计 最大后验估计 贝叶斯估计</description>
+    </item>
+    
+  </channel>
+</rss>

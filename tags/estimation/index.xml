@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Estimation on Chanrom - Logging life</title>
+    <link>http://chanrom.github.io/tags/estimation/</link>
+    <description>Recent content in Estimation on Chanrom - Logging life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 17 May 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://chanrom.github.io/tags/estimation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>参数估计</title>
+      <link>http://chanrom.github.io/post/nlp/estimation/</link>
+      <pubDate>Thu, 17 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://chanrom.github.io/post/nlp/estimation/</guid>
+      <description>参数估计方法 极大似然估计 最大后验估计 贝叶斯估计</description>
+    </item>
+    
+  </channel>
+</rss>
