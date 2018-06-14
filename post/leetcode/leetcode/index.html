@@ -84,7 +84,7 @@
 
 <meta itemprop="datePublished" content="2018-04-28T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2018-04-28T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1815">
+<meta itemprop="wordCount" content="1961">
 
 
 
@@ -216,7 +216,7 @@
       <div class="post-meta">
         <span class="post-time"> 2018-04-28 </span>
         
-        <span class="more-meta"> 1815 words </span>
+        <span class="more-meta"> 1961 words </span>
         <span class="more-meta"> 4 min read </span>
       </div>
     </header>
@@ -249,7 +249,7 @@
 <li><a href="#括号生成">括号生成</a></li>
 </ul></li>
 <li><a href="#两个指针">两个指针</a></li>
-<li><a href="#回溯">回溯</a></li>
+<li><a href="#快速排序">快速排序</a></li>
 </ul>
 </nav>
   </div>
@@ -475,7 +475,26 @@
 
 <p>使用两个指针可以解决不少的问题，特别是有关数组的题目上，这里从易到难介绍几道题目(从二分搜索到复杂一点的二分搜索33，34)。</p>
 
-<h1 id="回溯">回溯</h1>
+<h1 id="快速排序">快速排序</h1>
+
+<p>快速排序是很基本的一种排序算法，在面试中经常被问道，而且很多题目也是基于快速排序的一个变形。这里给出一个基本的实现：
+网上很多解法，通常是利用递归进行广度搜索：</p>
+
+<pre><code class="language-python">    def partition(a, l, r):
+        flag = a[r]
+        j = l - 1
+        for i in range(l, r):
+            if a[i] &lt;= flag:
+                j += 1
+                a[i], a[j] = a[j], a[i]
+        a[j + 1], a[r] = a[r], a[j + 1]
+        return j + 1
+    def Quicksort(a, l, r):
+        if l &lt; r:
+            q = partition(a, l, r)
+            Quicksort(a, l, q - 1)
+            Quicksort(a, q + 1, r)
+</code></pre>
 
     </div>
 
