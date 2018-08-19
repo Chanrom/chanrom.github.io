@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Emacs on Chanrom - Logging life</title>
+    <link>http://chanrom.github.io/tags/emacs/</link>
+    <description>Recent content in Emacs on Chanrom - Logging life</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 19 Aug 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://chanrom.github.io/tags/emacs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Emacs</title>
+      <link>http://chanrom.github.io/post/mimic/emacs/</link>
+      <pubDate>Sun, 19 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://chanrom.github.io/post/mimic/emacs/</guid>
+      <description>部分参考如下网站 Emacs常用快捷键 基本命令 C-x C-f 打开/新建文件 C-x C-s 保存当前缓冲区 C-x C-w 当前缓冲区另存为 C-x b 切换Buffer C-x C-b 显示Buffer</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Emacs - Chanrom - Logging life</title>
+  <link rel="alternate" hreflang="en" href="http://chanrom.github.io" />
+
+<meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta name="MobileOptimized" content="width"/>
+<meta name="HandheldFriendly" content="true"/>
+
+
+<meta name="applicable-device" content="pc,mobile">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="author" content="Chanrom" />
+  <meta name="description" content="部分参考如下网站 Emacs常用快捷键 基本命令 C-x C-f 打开/新建文件 C-x C-s 保存当前缓冲区 C-x C-w 当前缓冲区另存为 C-x b 切换Buffer C-x C-b 显示Buffer" />
+
+  <meta name="keywords" content="Chanrom, NLP, Life" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.39" />
+
+
+<link rel="canonical" href="http://chanrom.github.io/post/mimic/emacs/" />
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" />
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/dist/jane.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Emacs" />
+<meta property="og:description" content="部分参考如下网站 Emacs常用快捷键 基本命令 C-x C-f 打开/新建文件 C-x C-s 保存当前缓冲区 C-x C-w 当前缓冲区另存为 C-x b 切换Buffer C-x C-b 显示Buffer" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://chanrom.github.io/post/mimic/emacs/" />
+
+
+
+<meta property="article:published_time" content="2018-08-19T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-08-19T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Emacs">
+<meta itemprop="description" content="部分参考如下网站 Emacs常用快捷键 基本命令 C-x C-f 打开/新建文件 C-x C-s 保存当前缓冲区 C-x C-w 当前缓冲区另存为 C-x b 切换Buffer C-x C-b 显示Buffer">
+
+
+<meta itemprop="datePublished" content="2018-08-19T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-08-19T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="709">
+
+
+
+<meta itemprop="keywords" content="emacs," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Emacs"/>
+<meta name="twitter:description" content="部分参考如下网站 Emacs常用快捷键 基本命令 C-x C-f 打开/新建文件 C-x C-s 保存当前缓冲区 C-x C-w 当前缓冲区另存为 C-x b 切换Buffer C-x C-b 显示Buffer"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+
+
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Chanrom</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+
+  <header id="header" class="header container">
+    <div class="logo-wrapper">
+  <a href="/" class="logo">
+    
+      Chanrom
+    
+  </a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/">Home</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/post/">Archives</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/tags/">Tags</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/categories/">Categories</a>
+          
+
+        
+
+      </li>
+    
+      <li class="menu-item">
+        
+          
+          
+            <a class="menu-item-link" href="/about/">About</a>
+          
+
+        
+
+      </li>
+    
+  </ul>
+</nav>
+  </header>
+
+  <div id="mobile-panel">
+    <main id="main" class="main bg-llight">
+      <div class="content-wrapper">
+        <div id="content" class="content container">
+          <article class="post bg-white">
+    
+    <header class="post-header">
+      <h1 class="post-title">Emacs</h1>
+      
+      <div class="post-meta">
+        <span class="post-time"> 2018-08-19 </span>
+        
+        <span class="more-meta"> 709 words </span>
+        <span class="more-meta"> 2 min read </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Table of Contents</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#部分参考如下网站">部分参考如下网站</a></li>
+<li><a href="#基本命令">基本命令</a></li>
+<li><a href="#窗口命令">窗口命令</a></li>
+<li><a href="#光标移动命令">光标移动命令</a></li>
+<li><a href="#编辑命令">编辑命令</a></li>
+<li><a href="#搜索-替换命令">搜索/替换命令</a></li>
+<li><a href="#帮助">帮助</a></li>
+<li><a href="#其他">其他</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      
+
+<h1 id="部分参考如下网站">部分参考如下网站</h1>
+
+<p><a href="https://www.cnblogs.com/kunyuanjushi/p/5951404.html">Emacs常用快捷键</a></p>
+
+<h1 id="基本命令">基本命令</h1>
+
+<pre><code>C-x C-f     打开/新建文件
+C-x C-s     保存当前缓冲区
+C-x C-w     当前缓冲区另存为
+C-x b       切换Buffer
+C-x C-b     显示Buffer列表
+C-x k       关闭当前Buffer
+C-x C-v     关闭当前Buffer并打开新文件
+C-x C-c     关闭Emacs
+C-c C-z     终止shell中的进程
+</code></pre>
+
+<h1 id="窗口命令">窗口命令</h1>
+
+<pre><code>C-x 2       水平分割窗格
+C-x 3       垂直分割窗格
+C-x 0      关闭当前窗口
+C-x o      切换窗口
+C-x 1       关闭其他窗口
+C-x 5 2   新建窗口
+C-x 5 f    新窗口中打开文件
+</code></pre>
+
+<h1 id="光标移动命令">光标移动命令</h1>
+
+<pre><code>C-x 2       水平分割窗格
+C-x 3       垂直分割窗格
+C-x 0      关闭当前窗口
+C-x o      切换窗口
+C-x 1       关闭其他窗口
+C-x 5 2   新建窗口
+C-x 5 f    新窗口中打开文件
+</code></pre>
+
+<h1 id="编辑命令">编辑命令</h1>
+
+<pre><code>C-v              向前翻页
+M-v              向后翻页
+M-r              将光标移动到屏幕中间那行
+C-a              移到行首
+M-a              移到句首，从行首到句首之间可能有空格
+C-e              移到行尾
+M-e              移到句尾
+M-{              向上移动一段
+M-}              向下移动一段
+C-right              向前移动一个单词
+C-left              向后移动一个单词
+C-up              向前移动一段
+C-down              向后移动一段
+M-&lt;              移到整个文本开头
+M-&gt;              移到整个文本末尾
+M-x goto-line              移动到某一行
+C-l              重绘屏幕，效果就是当前编辑行移动窗口中央
+C-Space         设置开始标记
+C-@                设置开始标记(C-space可能被操作系统拦截)
+M-w                复制标记区内容
+C-y                  帖粘
+M-u                使光标处的单词大写
+M-l                 使光标处的单词小写
+M-c                使光标处单词首字母大写
+C-k                  删除一行
+</code></pre>
+
+<h1 id="搜索-替换命令">搜索/替换命令</h1>
+
+<pre><code>C-s          向下搜索
+C-r          向上搜索
+M-x replace-string 替换（替换光标之后的内容）
+M-x replace-regexp 正则替换（替换光标之后的内容）
+</code></pre>
+
+<h1 id="帮助">帮助</h1>
+
+<pre><code>C-h ?              查看帮助信息
+C-h f              查看一个函数
+C-h v              查看一个变量
+C-h k              查看一个键绑定 (C－h c 也是查看键绑定，但是信息较简略)
+C-h C-f              查看一个函数的info，非常有用
+C-h i              看Info
+</code></pre>
+
+<h1 id="其他">其他</h1>
+
+<pre><code>C-M-\              对选中区域，按照某种格式(比如C程序)进行格式化
+C-x h              全部选中
+M-!              执行外部shell命令
+M-x shell              模拟shell的buffer
+M-x term              模拟terminal, C-c k 关闭terminal
+C-x C-q              修改buffer的只读属性
+</code></pre>
+
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Chanrom</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-08-19</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/emacs/">emacs</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/nlp/basic/">
+            <span class="next-text nav-default">NLP一些经典算法</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+    
+  </article>
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="chanromzhou@email.com" rel="me" class="iconfont icon-email"
+        title="email" target="_blank">
+      </a>
+      <a href="https://twitter.com" rel="me" class="iconfont icon-twitter"
+        title="twitter" target="_blank">
+      </a>
+      <a href="https://github.com/Chanrom" rel="me" class="iconfont icon-github"
+        title="github" target="_blank">
+      </a>
+  <a href="http://chanrom.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss"
+    title="rss" target="_blank">
+  </a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - <a class="theme-link" href="https://github.com/xianmin/hugo-theme-jane">Jane</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy;
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span><span class="author">Chanrom</span></span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/jane.min.js?v=2.7.0"></script>
+
+
+
+
+
+</body>
+</html>
